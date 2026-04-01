@@ -1,0 +1,936 @@
+    /* --- General & Variables --- */
+    
+     :root {
+        --primary: #1e88e5;
+        --dark: #0d47a1;
+        --text: #555;
+        --bg-gradient: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        /* You might need to add this font or use a generic one */
+    }
+    
+    body {
+        background: var(--bg-gradient);
+        overflow-x: hidden;
+        color: #333;
+    }
+    /* --- Navbar Styling --- */
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        background: transparent;
+        position: relative;
+        z-index: 1000;
+    }
+    
+    .logo {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--dark);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .logo span {
+        color: var(--primary);
+    }
+    
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: #444;
+        font-weight: 500;
+        transition: 0.3s;
+        font-size: 1rem;
+    }
+    
+    .nav-links a.active,
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+    
+    .nav-icons {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        font-size: 1.3rem;
+        color: #555;
+    }
+    
+    .cart {
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .count {
+        position: absolute;
+        top: -12px;
+        right: -10px;
+        background: var(--primary);
+        color: white;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 3px 7px;
+        border-radius: 50%;
+    }
+    
+    .menu-toggle {
+        display: none;
+        font-size: 1.6rem;
+        cursor: pointer;
+        color: var(--dark);
+    }
+    /* --- Hero Section Styling --- */
+    
+    .hero {
+        display: flex;
+        align-items: center;
+        padding: 60px 8% 100px;
+        gap: 50px;
+    }
+    
+    .hero-text {
+        flex: 1.2;
+    }
+    
+    .badge-text {
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .hero-text h1 {
+        font-size: 3.8rem;
+        margin: 18px 0;
+        line-height: 1.1;
+        color: #222;
+    }
+    
+    .hero-text p {
+        color: var(--text);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        max-width: 600px;
+    }
+    
+    .search-tabs {
+        background: white;
+        padding: 12px;
+        border-radius: 60px;
+        display: inline-flex;
+        box-shadow: var(--shadow);
+        gap: 5px;
+    }
+    
+    .tab-btn {
+        border: none;
+        padding: 14px 28px;
+        background: none;
+        cursor: pointer;
+        border-radius: 40px;
+        color: #666;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+    
+    .tab-btn.active {
+        background: var(--primary);
+        color: white;
+        box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+    }
+    /* Hero Image & Floating Elements */
+    
+    .hero-visual {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 40px;
+    }
+    
+    .image-wrapper {
+        position: relative;
+        width: 380px;
+        height: 450px;
+        background: #2196F3;
+        border-radius: 40px;
+        border: 12px solid white;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+        z-index: 2;
+        overflow: visible;
+        /* To let doctor pop out */
+    }
+    /* Back shapes */
+    
+    .image-wrapper::before,
+    .image-wrapper::after {
+        content: '';
+        position: absolute;
+        border-radius: 40px;
+    }
+    
+    .image-wrapper::before {
+        top: -35px;
+        right: -35px;
+        width: 210px;
+        height: 210px;
+        background: linear-gradient(45deg, #ff9800, #f44336);
+        border: 10px solid white;
+        z-index: -1;
+    }
+    
+    .image-wrapper::after {
+        bottom: -25px;
+        left: -45px;
+        width: 100%;
+        height: 100%;
+        border: 3px solid #b3e5fc;
+        z-index: -2;
+    }
+    
+    .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+        position: relative;
+        bottom: 25px;
+        /* Doctor pops out top */
+    }
+    
+    .floating-card {
+        position: absolute;
+        bottom: 45px;
+        left: -60px;
+        background: white;
+        padding: 15px 30px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        z-index: 10;
+        border: 1px solid #f0f0f0;
+    }
+    
+    .user-imgs {
+        display: flex;
+        align-items: center;
+    }
+    
+    .user-imgs img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 2px solid white;
+        margin-left: -12px;
+    }
+    
+    .user-imgs img:first-child {
+        margin-left: 0;
+    }
+    
+    .stats strong {
+        display: block;
+        color: #2196F3;
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+    
+    .stats span {
+        font-size: 0.85rem;
+        color: #777;
+        font-weight: 500;
+    }
+    /* --- Services Section Styling --- */
+    
+    .services {
+        padding: 100px 8% 120px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.5);
+    }
+    
+    .services h2 {
+        font-size: 2.2rem;
+        color: #222;
+        margin-bottom: 50px;
+    }
+    
+    .service-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 25px;
+    }
+    
+    .card {
+        background: white;
+        padding: 35px;
+        border-radius: 25px;
+        box-shadow: var(--shadow);
+        transition: 0.4s ease;
+        cursor: pointer;
+        text-align: left;
+        border: 1px solid transparent;
+    }
+    
+    .card:hover {
+        transform: translateY(-10px);
+        border-color: #e3f2fd;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+    
+    .card h3 {
+        font-size: 1.4rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    
+    .card p {
+        color: #666;
+        font-size: 1rem;
+    }
+    
+    .card.highlight {
+        background: var(--primary);
+        color: white;
+    }
+    
+    .card.highlight h3,
+    .card.highlight p {
+        color: white;
+    }
+    
+    .medicine {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    #card_id.highlight:hover {
+        background: var(--primary);
+        color: white;
+    }
+    /* --- Responsive Media Queries --- */
+    /* Laptops & Tablets (Below 1100px) */
+    
+    @media (max-width: 1100px) {
+        .hero {
+            gap: 30px;
+        }
+        .hero-text h1 {
+            font-size: 3rem;
+        }
+        .navbar {
+            padding: 15px 5%;
+        }
+    }
+    /* Tablets (Below 992px) */
+    
+    @media (max-width: 992px) {
+        .hero {
+            flex-direction: column-reverse;
+            text-align: center;
+            padding-top: 40px;
+        }
+        .hero-text p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-text h1 {
+            font-size: 2.8rem;
+        }
+        .search-tabs {
+            border-radius: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .hero-visual {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
+    /* Mobile Devices (Below 768px) */
+    
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: white;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s ease;
+            z-index: 999;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        }
+        .nav-links.show {
+            right: 0;
+        }
+        .nav-links li {
+            margin: 15px 0;
+        }
+        .nav-links a {
+            font-size: 1.2rem;
+        }
+        .nav-icons {
+            display: none;
+        }
+        /* Hide icons on mobile for space */
+        .logo {
+            z-index: 1001;
+        }
+        .menu-toggle {
+            z-index: 1001;
+        }
+        .hero-text h1 {
+            font-size: 2.2rem;
+        }
+        .hero-text p {
+            font-size: 1rem;
+        }
+        .image-wrapper {
+            width: 320px;
+            height: 380px;
+        }
+        .floating-card {
+            left: -30px;
+        }
+    }
+    /* --- Footer Styling --- */
+    
+    .main-footer {
+        background: #ffffff;
+        padding: 80px 8% 20px;
+        border-top: 1px solid #eef2f6;
+        margin-top: 50px;
+    }
+    
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+    
+    .footer-col h4 {
+        color: var(--dark);
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+        position: relative;
+    }
+    
+    .footer-col h4::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 30px;
+        height: 2px;
+        background: var(--primary);
+    }
+    
+    .footer-col p {
+        color: #777;
+        line-height: 1.6;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+    
+    .footer-col ul {
+        list-style: none;
+    }
+    
+    .footer-col ul li {
+        margin-bottom: 12px;
+    }
+    
+    .footer-col ul li a {
+        text-decoration: none;
+        color: #666;
+        transition: 0.3s;
+    }
+    
+    .footer-col ul li a:hover {
+        color: var(--primary);
+        padding-left: 5px;
+    }
+    /* Social Icons */
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-links a {
+        width: 35px;
+        height: 35px;
+        background: #f0f7ff;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    
+    .social-links a:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+    }
+    /* Subscribe Input */
+    
+    .subscribe-form {
+        display: flex;
+        background: #f4f8fb;
+        padding: 5px;
+        border-radius: 50px;
+    }
+    
+    .subscribe-form input {
+        border: none;
+        background: none;
+        padding: 10px 15px;
+        outline: none;
+        width: 100%;
+    }
+    
+    .subscribe-form button {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .subscribe-form button:hover {
+        background: var(--dark);
+    }
+    /* Footer Bottom */
+    
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #f1f1f1;
+        color: #999;
+        font-size: 0.9rem;
+    }
+    /* Responsive Footer */
+    
+    @media (max-width: 768px) {
+        .footer-container {
+            text-align: center;
+        }
+        .footer-col h4::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .social-links {
+            justify-content: center;
+        }
+    }
+    /* Page Headers */
+    
+    .page-header {
+        text-align: center;
+        padding: 60px 8%;
+        background: #e3f2fd;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+        color: var(--dark);
+        margin-bottom: 15px;
+    }
+    
+    .search-box-large {
+        max-width: 600px;
+        margin: 20px auto;
+        display: flex;
+        background: white;
+        padding: 10px;
+        border-radius: 50px;
+        box-shadow: var(--shadow);
+    }
+    
+    .search-box-large input {
+        flex: 1;
+        border: none;
+        padding: 10px 20px;
+        outline: none;
+        font-size: 1rem;
+    }
+    
+    .btn-primary {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    /* Doctor Cards Specific */
+    
+    .doctor-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+    
+    .doctors-list,
+    .medical-stores {
+        padding: 50px 8%;
+    }
+    
+    .about-text p {
+        color: #777;
+        line-height: 1.6;
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+        padding: 10px;
+        text-align: justify;
+    }
+    /* .container-fluid {
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        text-align: justify;
+        padding: 20px;
+    } */
+    
+    .container {
+        margin: 25px;
+    }
+    
+    .ms-rteElement-H1 {
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        outline: 0;
+        margin: .67em 0;
+        font-family: "Fauna One", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+        font-weight: 500;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.85em;
+        box-sizing: content-box;
+        line-height: 1.4;
+        color: #da291c;
+    }
+    
+    .ms-rteElement-H2 {
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        outline: 0;
+        margin: .67em 0;
+        font-family: "Fauna One", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+        font-weight: 500;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.85em;
+        box-sizing: content-box;
+        line-height: 1.4;
+        color: #da291c;
+    }
+    /* style of department */
+    /*     
+    .row {
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        font-family: "Lato", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #434343;
+        box-sizing: border-box;
+        outline: 0;
+        margin-left: -15px;
+        margin-right: -15px;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .dept {
+        display: flex;
+        justify-content: space-around;
+        column-gap: 20px;
+        gap: 20px;
+    } */
+    
+    .dept {
+        display: flex;
+        flex-wrap: wrap;
+        /* Iske bagair line break nahi hogi */
+        gap: 20px;
+        /* Cards ke beech ka fasla */
+        justify-content: center;
+        /* Items ko center mein rakhne ke liye */
+        padding: 20px;
+    }
+    /* Sabhi dept-divs par ek sath styling apply karne ke liye */
+    
+    [class^="dept_"] {
+        /* calculation: (100% / 4 items) - gap adjustment */
+        flex: 0 0 calc(25% - 15px);
+        background: white;
+        min-height: 180px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+    }
+    
+    [class^="dept_"]:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(33, 150, 243, 0.1);
+    }
+    /* Responsive: Mobile par 1 ya 2 cards dikhane ke liye */
+    
+    @media (max-width: 992px) {
+        [class^="dept_"] {
+            flex: 0 0 calc(50% - 10px);
+            /* Tablet par 2 cards */
+        }
+    }
+    
+    @media (max-width: 600px) {
+        [class^="dept_"] {
+            flex: 0 0 100%;
+            /* Mobile par 1 card */
+        }
+    }
+    
+    #doctors-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+    /* 4 per row logic */
+    
+    .doctor-card-style {
+        flex: 0 0 calc(25% - 15px);
+        background: white;
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f0f0f0;
+    }
+    
+    .dr-img-box img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: 3px solid var(--primary);
+        margin-bottom: 15px;
+    }
+    
+    .role {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    
+    .dr-details {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.85rem;
+        color: #666;
+        margin: 15px 0;
+        gap: 5px;
+    }
+    
+    .book-btn {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: var(--primary);
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .book-btn:hover {
+        background: var(--dark);
+    }
+    
+    .doctors-section {
+        background: rgba(255, 255, 255, 0.5);
+        padding: 20px 8%;
+    }
+    /* Responsive */
+    
+    @media (max-width: 992px) {
+        .doctor-card-style {
+            flex: 0 0 calc(50% - 10px);
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .doctor-card-style {
+            flex: 0 0 100%;
+        }
+    }
+    
+    .dr {
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    
+    .ab-banner {
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+        width: 100%;
+    }
+    
+    .ph-banner {
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+        width: 100%;
+        height: 80vh;
+    }
+    /* here pharmacy */
+    
+    .med-card {
+        flex: 0 0 calc(25% - 15px);
+        /* Row mein 4 cards */
+        background: white;
+        border-radius: 20px;
+        padding: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: 0.3s;
+        border: 1px solid #f0f0f0;
+    }
+    
+    .med-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .med-img {
+        width: 100%;
+        height: 180px;
+        background: #f8f9fa;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .med-img img {
+        max-width: 80%;
+        object-fit: contain;
+    }
+    
+    .category-tag {
+        font-size: 0.7rem;
+        background: #e3f2fd;
+        color: #1e88e5;
+        padding: 4px 10px;
+        border-radius: 50px;
+        font-weight: 600;
+    }
+    
+    .med-info h3 {
+        font-size: 1.1rem;
+        margin: 10px 0 5px;
+    }
+    
+    .med-info p {
+        font-size: 0.85rem;
+        color: #777;
+        height: 40px;
+        /* Text alignment ke liye */
+        overflow: hidden;
+    }
+    
+    .price-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+    
+    .add-to-cart {
+        background: #1e88e5;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 500;
+    }
+    /* Tablet aur Mobile ke liye */
+    
+    @media (max-width: 1024px) {
+        .med-card {
+            flex: 0 0 calc(50% - 10px);
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .med-card {
+            flex: 0 0 100%;
+        }
+    }
+    
+    .title {
+        display: block;
+        text-align: center;
+        font-size: 2rem;
+        color: var(--dark);
+        margin-bottom: 30px;
+    }
+    
+    .search-bar #medSearch {
+        /* max-width: 500px; */
+        width: 30%;
+        /* display: flex;
+        justify-content: center; */
+        background: white;
+        padding: 10px;
+        border-radius: 50px;
+        box-shadow: var(--shadow);
+    }
+    
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
