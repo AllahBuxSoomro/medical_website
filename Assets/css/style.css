@@ -898,3 +898,12 @@
         justify-content: center;
         margin-bottom: 20px;
     }
+    
+    .home {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
