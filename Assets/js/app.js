@@ -3,11 +3,11 @@ import { pharmacyData } from './pharmacyData.js';
 const container = document.getElementById('medicine-list');
 const searchInput = document.getElementById('medSearch');
 
-// Function: Jo data display karega
+// Function to render the pharmacy data to the DOM
 function loadPharmacy(dataToDisplay) {
     let htmlMarkup = "";
 
-    // Agar koi result na mile toh message dikhayein
+    // if result not found then show this message
     if (dataToDisplay.length === 0) {
         container.innerHTML = `<h3 style="width:100%; text-align:center; padding:20px;">Result not found 🥹!</h3>`;
         return;

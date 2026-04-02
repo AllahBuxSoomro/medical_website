@@ -661,44 +661,16 @@
         line-height: 1.4;
         color: #da291c;
     }
-    /* style of department */
-    /*     
-    .row {
-        -webkit-text-size-adjust: 100%;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        font-family: "Lato", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
-        font-size: 14px;
-        line-height: 1.42857143;
-        color: #434343;
-        box-sizing: border-box;
-        outline: 0;
-        margin-left: -15px;
-        margin-right: -15px;
-        display: flex;
-        justify-content: space-around;
-    }
-    
-    .dept {
-        display: flex;
-        justify-content: space-around;
-        column-gap: 20px;
-        gap: 20px;
-    } */
     
     .dept {
         display: flex;
         flex-wrap: wrap;
-        /* Iske bagair line break nahi hogi */
         gap: 20px;
-        /* Cards ke beech ka fasla */
         justify-content: center;
-        /* Items ko center mein rakhne ke liye */
         padding: 20px;
     }
-    /* Sabhi dept-divs par ek sath styling apply karne ke liye */
     
     [class^="dept_"] {
-        /* calculation: (100% / 4 items) - gap adjustment */
         flex: 0 0 calc(25% - 15px);
         background: white;
         min-height: 180px;
@@ -714,19 +686,16 @@
         transform: translateY(-5px);
         box-shadow: 0 15px 30px rgba(33, 150, 243, 0.1);
     }
-    /* Responsive: Mobile par 1 ya 2 cards dikhane ke liye */
     
     @media (max-width: 992px) {
         [class^="dept_"] {
             flex: 0 0 calc(50% - 10px);
-            /* Tablet par 2 cards */
         }
     }
     
     @media (max-width: 600px) {
         [class^="dept_"] {
             flex: 0 0 100%;
-            /* Mobile par 1 card */
         }
     }
     
@@ -736,7 +705,6 @@
         gap: 20px;
         padding: 20px;
     }
-    /* 4 per row logic */
     
     .doctor-card-style {
         flex: 0 0 calc(25% - 15px);
@@ -829,7 +797,6 @@
     
     .med-card {
         flex: 0 0 calc(25% - 15px);
-        /* Row mein 4 cards */
         background: white;
         border-radius: 20px;
         padding: 15px;
@@ -919,10 +886,7 @@
     }
     
     .search-bar #medSearch {
-        /* max-width: 500px; */
         width: 30%;
-        /* display: flex;
-        justify-content: center; */
         background: white;
         padding: 10px;
         border-radius: 50px;
