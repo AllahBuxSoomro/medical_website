@@ -65,7 +65,7 @@ window.addEventListener('scroll', () => {
 // this is object collection of doctors data
 const container = document.getElementById('doctors-container');
 
-// Function jo cards banayega
+// Function renders the doctors data to the DOM
 function displayDoctors() {
     container.innerHTML = doctorsData.map(dr => `
         <div class="dept-${dr.id} doctor-card-style">
@@ -83,5 +83,5 @@ function displayDoctors() {
     `).join('');
 }
 
-// Function ko call karein
+// call the Function
 displayDoctors();
